@@ -40,6 +40,7 @@ services:
       - "8080:8080"
       - "1883:1883"
       - "5683:5683"
+      - "9001:9001"
     logging:
       driver: "json-file"
       options:
@@ -47,6 +48,7 @@ services:
         max-file: "30"
     environment:
       TB_HOST: tbpe
+    network_mode: bridge
     env_file:
       - tb-node.env
     volumes:
